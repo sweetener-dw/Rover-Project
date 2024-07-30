@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Page {
+  background-color: black;
+  min-height: 100vh; /* Ensure the page covers the full viewport height */
+  padding: 20px; /* Optional padding */
+}
+
+.intro-container{
+  text-align: center;
+  height: 400px;
+}
+
+.header{ 
+  height: 400px;
+  display:flex;
+}
+
+.group-name {
+  font-family: 'Creepster', cursive;
+  max-height: 400px;
+  width: 75%;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(55px + 2vmin);
+  color: rgb(106, 7, 7);
+}
+
+.logo{
+  margin-top: 50px;
+  text-align: right;
+  height: 300px;
+}
+
+.logo-image{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display1{
+  text-align: center;
+}
+
+.sensor-data {
+  display: flex;
+  justify-content: space-between; /* Adjusts spacing between items */
+  gap: 20px; /* Optional: adds space between the items */
+}
+
+.sensor-item {
+  flex: 1; /* Ensures each item takes up equal space */
+  text-align: center; /* Centers the text in each item */
+  color: rgb(106, 7, 7);
+  font-size: calc(25px + 2vmin);
+  font-family: 'Creepster', cursive;
+}
+
+.video {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.video img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Adjusts spacing between buttons */
+  align-items: center;          /* Centers buttons vertically */
+  margin-top: 20px;             /* Adds space above the buttons */
+}
+
+.button-container button {
+  padding: 10px 20px;           /* Adjust button padding */
+  margin: 0 5px;                /* Adds space between buttons */
+  width: 200px;
+  cursor: pointer;              /* Changes cursor to pointer */
+  color: black;
+  background-color: limegreen;
+  font-size: calc(15px + 2vmin);
+
+}
+.button-container2 {
+  display: flex;
+  justify-content: space-around; /* Adjusts spacing between buttons */
+  align-items: center;          /* Centers buttons vertically */
+  margin-top: 100px;             /* Adds space above the buttons */
+}
+
+.button-container2 button {
+  padding: 10px 20px;           /* Adjust button padding */
+  margin: 0 5px;                /* Adds space between buttons */
+  width: 200px;
+  cursor: pointer;              /* Changes cursor to pointer */
+  color: black;
+  background-color: gray;
+  font-size: calc(15px + 2vmin);
+}

@@ -1,0 +1,63 @@
+import machine
+import utime
+
+# Define pin numbers
+button_pin = 14
+buzzer_pin = 15
+
+# Set up the button and buzzer pins
+button = machine.Pin(button_pin, machine.Pin.IN, machine.Pin.PULL_DOWN)
+buzzer = machine.PWM(machine.Pin(buzzer_pin))
+
+song = [
+    (440, 500),  # A4
+    (440, 500),  # A4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 800),  # A4
+    (440, 500),  # A4
+    (440, 500),  # A4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 500),  # A4
+    (523, 500),  # C5
+    (493, 500),  # B4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 500),  # A4
+    (523, 500),  # C5
+    (493, 500),  # B4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 500),  # A4
+    (523, 500),  # C5
+    (493, 500),  # B4
+    (440, 500),  # A4
+    (349, 300),  # F4
+    (392, 300),  # G4
+    (440, 1000)  # A4 (hold for emphasis)
+] #List of tupples that hold a frequncy (Hz) and a duration (ms)
+
+def play_song():
+    print("Playing song")
+    for note, duration in song:
+        print(f"Playing note {note} for {duration} ms")
+        buzzer.freq(note)
+        buzzer.duty_u16(32768)  # Set duty cycle to 50%
+        utime.sleep_ms(duration) #waits for the duration of the notes (ex. plays a note for 400ms. without it, nothing plays)
+        buzzer.duty_u16(0)  # Turn off the buzzer between notes (if absent, each note just goes on to the next and the las note never stops)
+        utime.sleep_ms(100)  # Short pause between notes (if absent, each notes goes to the next but it does stop at the end)
+
+while True:
+    if button.value() == 1:  # If button is pressed
+        play_song()
